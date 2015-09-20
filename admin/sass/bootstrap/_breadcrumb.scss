@@ -1,0 +1,9 @@
+#breadcrumb{
+	background-color: $turquoise;
+	list-style: none;
+	display: inline-block;
+	li{
+		float: left;
+		background-color: $turquoise;
+	}
+}

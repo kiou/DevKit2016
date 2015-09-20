@@ -1,0 +1,60 @@
+<?php
+	include '../lib/init.php';
+
+	/**
+	 * Initialisation
+	 */
+	use Lib\Tool;
+	use Lib\BreadCrumb;
+	Tool::ifConnect(BASEADMIN);
+
+?>
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1;">
+	<title><?= TITLEBACK ?></title>
+	<link rel="icon" type="image/png" href="<?= BASEADMIN ?>img/layout/favicon.png">
+	<link href="<?= BASEADMIN ?>css/app.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]>
+		<script src="<?= BASEFRONT ?>js/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<main id="main">
+
+		<?php
+			include '../include/menu.php';
+		?>
+
+		<div id="container">
+
+			<?php
+				include '../include/header.php';
+			?>
+
+			<div id="contentTitre">
+				<h1>Bienvenue sur l'administration</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, dolorum!</p>
+			</div>
+
+			<div id="content">
+
+				<?= Tool::getFlash(); ?>
+
+			</div>
+
+		</div>
+
+	</main>
+
+	<script type="text/javascript" src="<?= BASEFRONT ?>js/jquery.js"></script>
+	<script type="text/javascript" src="<?= BASEFRONT ?>js/jquery-ui.js"></script>
+	<script type="text/javascript" src="<?= BASEADMIN ?>js/app.js"></script>	
+	
+</body>
+</html>

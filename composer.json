@@ -1,0 +1,19 @@
+{
+    "name": "luc/dev-kit",
+    "require": {
+        "imagine/imagine": "~0.6",
+        "swiftmailer/swiftmailer": "~5.4",
+        "cocur/slugify" : "1.1"
+    },
+    "autoload": {
+        "psr-4":{
+            "Lib\\":"lib/class"
+        }
+    },
+    "authors": [
+        {
+            "name": "kiou",
+            "email": "pinelli.luc@hotmail.fr"
+        }
+    ]
+}

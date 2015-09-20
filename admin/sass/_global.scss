@@ -1,0 +1,34 @@
+p{
+	color: $grisClair;
+	font-size: 15px;
+	font-weight: 300;
+}
+
+a{
+	font-size: 15px;
+	color: $grisFonce;
+	@include transition-property(opacity);
+	@include transition-duration(0.3s);
+	@include transition-timing-function(ease);
+	&:hover{
+		opacity: 0.6;
+	}
+}
+
+h1{
+	color: $grisClair;
+	font-size: 25px;
+	font-weight: 300;
+}
+
+h2{
+	color: $grisClair;
+	font-size: 21px;
+	font-weight: normal;
+}
+
+h3{
+	color: $grisClair;
+	font-size: 17px;
+	font-weight: normal;
+}

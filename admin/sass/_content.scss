@@ -1,0 +1,36 @@
+/* Connexion */
+#connexion{
+	background-image: url(../img/connexion/background.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	@include background-size(cover);
+	h1{
+		color: #fff;
+		text-align: center;
+		font-size: 15px;
+		padding: 25px 0px;
+	}
+}
+
+#connexionContent{
+	max-width: calc(490px - 8%);
+	padding: 55px 4% 65px 4%;
+	background-color: $grisFonce;
+	margin: 0px auto;
+	margin-top: 180px;
+}
+
+#connexionLogo{
+	margin: 0px auto;
+}
+
+#connexionMention{
+	width: 100%;
+	text-align: center;
+	padding: 5px 0px 15px 0px;
+	p{
+		color: #fff;
+		font-size: 13px;
+		line-height: 19px;
+	}
+}

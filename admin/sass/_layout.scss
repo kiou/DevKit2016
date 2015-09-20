@@ -1,0 +1,208 @@
+/* Template */
+#main{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	overflow-x: hidden;
+}
+
+#container{
+	z-index: 2;
+	position: relative;
+	margin-left: 250px;
+	width: calc(100% - 250px);
+	min-height: 100%;
+	background-color: $grisBleu;
+	@include transition-property(margin-left,width);
+	@include transition-duration(0.4s);
+	@include transition-timing-function(ease);
+	&.active{
+		margin-left: 250px;
+	}
+}
+
+#content{
+	padding: 30px;
+}
+
+#contentTitre{
+	width: 100%;
+	background-color: $grisBlanc;
+	padding: 20px 30px 30px 30px;
+	p{
+		color: $rouge;
+	}
+}
+
+.ui-helper-hidden-accessible{ display: none; }
+
+.ui-tooltip {
+	padding: 8px;
+	position: absolute;
+	z-index: 9999;
+	background-color: $grisClair;
+	font-size: 13px;
+	@include border-radius(3px);
+	div{
+		color: #fff;
+	}
+}
+/* Template */
+
+/* Header */
+#header{
+	background-color: #fff;
+	width: 100%;
+	border-bottom: 1px solid $grisBordure;
+}
+
+#headerAcces{
+	height: 50px;
+	line-height: 50px;
+	padding-left: 30px;
+	color: $grisTresClair;
+	font-weight: 300;
+	float: left;
+	.fa{
+		padding-right: 5px;
+	}
+}
+
+#headerCompte{
+	height: 50px;
+	padding: 0px 20px;
+	float: right;
+	border-left: 1px solid $grisBordure;
+	p{
+		@include transition-property(opacity);
+		@include transition-duration(0.3s);
+		@include transition-timing-function(ease);
+		line-height: 50px;
+		cursor: pointer;
+		&:hover{
+			opacity: 0.6;
+		}
+		.fa{
+			@include transition-property(transform);
+			@include transition-duration(0.3s);
+			@include transition-timing-function(ease);
+			padding-left: 5px;
+		}
+	}
+	&.active{
+		p{
+			.fa{
+				@include transform(rotateZ(90deg));
+			}
+		}
+	}
+}
+
+#headerCompteMenu{
+	text-align: right;
+	width: 150px;
+}
+
+#headerDeco{
+	height: 50px;
+	line-height: 50px;
+	float: right;
+	margin-right:30px;
+	font-size: 17px;
+	color: $grisTresClair;
+}
+
+#headerMobile{
+	position: relative;
+	float: left;
+	height: 50px;
+	width: 50px;
+	cursor: pointer;
+	border-right: 1px solid $grisBordure;
+	display: none;
+	span{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 22px;
+		height: 2px;
+		display: block;
+		background-color: $rouge;
+		@include transition-property(background);
+		@include transition-duration(0.4s);
+		@include transform(translateX(-50%) translateY(-50%));
+		&::before, &::after{
+			content:'';
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 22px;
+			height: 2px;
+			display: block;
+			background-color: $rouge;
+			@include transform-origin(50%, 50%);
+			@include transition-property(transform);
+			@include transition-duration(0.4s);
+			@include transition-timing-function(ease);
+			@include transform(translateY(-6px));
+		}
+		&::after{
+			@include transform(translateY(6px));
+		}
+	}
+	&.active span{
+		background: transparent;
+	}
+	&.active span::before{
+		@include transform(translateY(0px) rotate(45deg));
+	}
+	&.active span::after{
+		@include transform(translateY(0px) rotate(-45deg));
+	}
+}
+/* Header */
+
+/* Menu */
+#menu {
+	width: 250px;
+	position: fixed;
+	z-index: 1;
+	height: 100%;
+	background-color: $grisClair;
+	overflow-y: auto;
+	@include transition-property(left);
+	@include transition-duration(0.4s);
+	@include transition-timing-function(ease);
+	&.active{
+		left: 0px;
+	}
+}
+
+#menuEntreprise{
+	width: 100%;
+	background-color: $rouge;
+	text-align: center;
+	height: 50px;
+	p{
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 15px;
+		line-height: 50px;
+		color: #fff;
+	}
+}
+
+#menuLogo{
+	width: 116px;
+	height: 116px;
+	background-color: $grisBleu;
+	margin: 17px auto;
+	@include border-radius(50%);
+	border: 3px solid $turquoise;
+	img{
+		width: 100%;
+	}
+}
+/* Menu */

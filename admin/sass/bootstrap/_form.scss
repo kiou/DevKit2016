@@ -1,0 +1,170 @@
+/* Class de base pour la mise en forme des champs */
+.form-elem{
+	width: calc(100% - 12px);
+	background-color: #fff;
+	border: 1px solid #ccc;
+	font-size: 14px;
+	margin-bottom: 20px;
+	padding: 12px 0px 12px 12px;
+	color: $grisClair;
+}
+
+textarea{
+	height: 150px;
+}
+
+/* Désactiver un champ */
+input,
+textarea,
+select{
+	&.disabled{
+		background-color: #ccc;
+		cursor:Not-Allowed;
+	}
+}
+
+/* Design pour le placeholder */
+@mixin input-placeholder {
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; } 
+}
+
+input,
+textarea{
+	@include input-placeholder {
+		color: $grisClair;
+		font-size: 13px;
+	}
+	&:focus{
+		padding-bottom: 10px;
+		border-bottom: 3px solid $turquoise;
+	}
+	&.small{
+		width: 180px;
+	}
+	&.medium{
+		width: 300px;
+	}
+	&.big{
+		width: 500px;
+	}
+}
+
+/* Tailles du champ de type select */
+select{
+	&.small{
+		width: 192px;
+	}
+	&.medium{
+		width: 312px;
+	}
+	&.big{
+		width: 512px;
+	}
+}
+
+/* Version du select pour le poid d'un contenu */
+select{
+	&.managerPoid{
+		border: 1px solid #ccc;
+		margin: 0px 8px 0px 0px;
+	}
+}
+
+input.checkbox{ margin-bottom: 20px; }
+input.radio{ margin-bottom: 20px; }
+
+/* élémen de liste */
+.liste{
+	height: 190px;
+	overflow: auto;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	padding: 10px;
+	p{
+		height: 23px
+	}
+	&.medium{
+		width: 290px;
+	}
+	&.big{
+		width: 490px;
+	}
+}
+
+/* Légende en dessous des champs + label + liste */
+form{
+	.legende{
+		margin: -15px 0px 15px 0px;
+		font-style: italic;
+		font-size: 13px;
+		color: $grisClair;
+	}
+	label{
+		font-style: italic;
+		color: $grisClair;
+		font-size: 13px;
+		display: block;
+		padding-bottom: 3px;
+	}
+}
+
+/* Class de base pour la mise en forme des boutons */
+.form-submit{
+	@include border-radius(4px);
+	width: 100%;
+	padding: 10px 0px;
+	border: 1px solid transparent;
+	margin-bottom: 20px;
+	color: #fff;
+	cursor: pointer;
+	background-color: $grisClair;
+	border-color: darken($grisClair, 5%);
+	font-size: 16px;
+	font-weight: 300;
+	@include transition-property(background, border-color);
+	@include transition-duration(0.3s);
+	@include transition-timing-function(ease);
+	&:hover{
+		background-color: darken($grisClair, 5%);
+		border-color: darken($grisClair, 11%);	
+	}
+	&:active{
+		 @include box-shadow(inset 0 3px 5px rgba(0,0,0,.160));
+	}
+	&.turquoise{
+		background-color: $turquoise;
+		border-color: darken($turquoise, 5%);
+		&:hover{
+			background-color: darken($turquoise, 5%);
+			border-color: darken($turquoise, 11%);	
+		}
+		&:active{
+			 @include box-shadow(inset 0 3px 5px rgba(0,0,0,.160));
+		}
+	}
+	&.rouge{
+		background-color: $rouge;
+		border-color:  darken($rouge, 5%);
+		&:hover{
+			background-color: darken($rouge, 5%);
+			border-color: darken($rouge, 11%);	
+		}
+		&:active{
+			 @include box-shadow(inset 0 3px 5px rgba(0,0,0,.160));
+		}
+	}
+	&.small{
+		width: 190px;
+	}
+	&.medium{
+		width: 310px;
+	}
+	&.big{
+		width: 510px;
+	}
+
+}
