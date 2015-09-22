@@ -46,6 +46,30 @@ $(document).ready(function(){
 
     });
 
+    /* Menu principal à gauche */
+    $("#menu .menuNav").on('click',function(){
+
+        var menuNav = $(this);
+        var ul = menuNav.attr('data-nav');
+
+        /* Si le menu n'est pas cliqué */
+        if(menuNav.hasClass('active') == false){
+
+            /* Reset */
+            $('#menu .menuNav').removeClass('active');
+            $('#menu ul:visible').slideUp('fast');
+            
+            /* Active */
+            menuNav.addClass('active');
+            $('ul#'+ul).slideDown('fast');
+
+        }else{
+            menuNav.removeClass('active');
+            $('ul#'+ul).slideUp('fast');
+        }
+
+    });
+
     /* Resize de la fenêtre du navigateur */
     $(window).resize(function() {
 

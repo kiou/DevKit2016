@@ -128,10 +128,10 @@
 			$current  = self::getUrl();
 
 			foreach ($pages as $page) {
-				if(!is_numeric($page) && $current  == $page) echo 'current';
+				if(!is_numeric($page) && $current  == $page) return 'current';
 				else{
 					$pageUrl = (isset($_GET['page'])) ? $_GET['page'] : '';
-					if($pageUrl == $page) echo 'current';
+					if($pageUrl == $page) return 'current';
 				}
 			}
 
