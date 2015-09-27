@@ -70,6 +70,30 @@ $(document).ready(function(){
 
     });
 
+    /* Publication dépublication */
+    $('.tablePublucation').click(function(e){
+
+        e.preventDefault();
+       
+        var td = $(this);
+        var url = td.attr('data-url');
+        td.html('<i class="fa fa-refresh loader fa-spin"></i>');
+        
+        $.ajax(url)
+        .done(function(data){
+            console.log(data);
+            if(data){
+                td.html('<a href="#" title="Publication"><i class="tableAction turquoise fa fa-check"></i></a>');
+            }else{
+                td.html('<a href="#" title="Publication"><i class="tableAction rouge fa fa-check"></i></a>'); 
+            }
+        })
+        .fail(function(){
+             alert('Erreur Ajax');
+        });
+
+    });
+
     /* Resize de la fenêtre du navigateur */
     $(window).resize(function() {
 

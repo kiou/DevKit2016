@@ -43,11 +43,15 @@
 	position: absolute;
 	z-index: 9999;
 	background-color: $grisClair;
-	font-size: 13px;
+	font-size: 14px;
 	@include border-radius(3px);
 	div{
 		color: #fff;
 	}
+}
+
+.loader{
+	color: $grisClair;
 }
 /* Template */
 

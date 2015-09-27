@@ -1,26 +1,12 @@
 /* Class de base pour la mise en forme des champs */
 .form-elem{
-	width: calc(100% - 12px);
+	width: calc(100% - 26px);
 	background-color: #fff;
 	border: 1px solid #ccc;
 	font-size: 14px;
 	margin-bottom: 20px;
-	padding: 12px 0px 12px 12px;
+	padding: 12px;
 	color: $grisClair;
-}
-
-textarea{
-	height: 150px;
-}
-
-/* Désactiver un champ */
-input,
-textarea,
-select{
-	&.disabled{
-		background-color: #ccc;
-		cursor:Not-Allowed;
-	}
 }
 
 /* Design pour le placeholder */
@@ -34,81 +20,118 @@ select{
 input,
 textarea{
 	@include input-placeholder {
-		color: $grisClair;
-		font-size: 13px;
+		color: $grisTresClair;
+		font-size: 14px;
 	}
 	&:focus{
 		padding-bottom: 10px;
 		border-bottom: 3px solid $turquoise;
 	}
 	&.small{
-		width: 180px;
+		max-width: 180px;
 	}
 	&.medium{
-		width: 300px;
+		max-width: 300px;
 	}
 	&.big{
-		width: 500px;
+		max-width: 500px;
 	}
+}
+
+textarea{
+	height: 150px;
 }
 
 /* Tailles du champ de type select */
 select{
+	&.form-elem{
+		width: 100%
+	}
 	&.small{
-		width: 192px;
+		max-width: 204px;
 	}
 	&.medium{
-		width: 312px;
+		max-width: 324px;
 	}
 	&.big{
-		width: 512px;
+		max-width: 524px;
 	}
 }
 
-/* Version du select pour le poid d'un contenu */
+/* Désactiver un champ */
+input,
+textarea,
 select{
-	&.managerPoid{
-		border: 1px solid #ccc;
-		margin: 0px 8px 0px 0px;
+	&.disabled{
+		background-color: #ccc;
+		cursor:Not-Allowed;
 	}
 }
 
-input.checkbox{ margin-bottom: 20px; }
-input.radio{ margin-bottom: 20px; }
+/* Radio + Checkbox */
+.form-radio,
+.form-checkbox{
+	margin-bottom: 20px;
+}
 
 /* élémen de liste */
 .liste{
+	width: calc(100% - 26px);
 	height: 190px;
 	overflow: auto;
 	background-color: #fff;
 	border: 1px solid #ccc;
 	margin-bottom: 20px;
-	padding: 10px;
+	padding: 12px;
+	input{
+		display: inline-block;
+		vertical-align: middle;
+	}
 	p{
-		height: 23px
+		height: 23px;
+	}
+	&.small{
+		max-width: 180px;
 	}
 	&.medium{
-		width: 290px;
+		max-width: 300px;
 	}
 	&.big{
-		width: 490px;
+		max-width: 500px;
 	}
 }
 
+/* Label du formulaire */
+label{
+	color: #616161;
+	font-size: 14px;
+	display: block;
+	padding-bottom: 5px;
+}
+
 /* Légende en dessous des champs + label + liste */
-form{
-	.legende{
-		margin: -15px 0px 15px 0px;
-		font-style: italic;
-		font-size: 13px;
-		color: $grisClair;
+.form-legende{
+	width: 100%;
+	margin: -15px 0px 15px 0px;
+	font-style: italic;
+	font-size: 13px;
+	color: $grisTresClair;
+}
+
+/* Retour d'image dans le formulaire */
+.form-image{
+	margin-bottom: 20px;
+	&.small{
+		max-width: 204px;
 	}
-	label{
-		font-style: italic;
-		color: $grisClair;
-		font-size: 13px;
-		display: block;
-		padding-bottom: 3px;
+	&.medium{
+		max-width: 324px;
+	}
+	&.big{
+		max-width: 524px;
+	}
+	img{
+		max-width: 100%;
 	}
 }
 
@@ -118,7 +141,6 @@ form{
 	width: 100%;
 	padding: 10px 0px;
 	border: 1px solid transparent;
-	margin-bottom: 20px;
 	color: #fff;
 	cursor: pointer;
 	background-color: $grisClair;
@@ -158,13 +180,12 @@ form{
 		}
 	}
 	&.small{
-		width: 190px;
+		max-width: 204px;
 	}
 	&.medium{
-		width: 310px;
+		max-width: 324px;
 	}
 	&.big{
-		width: 510px;
+		max-width: 524px;
 	}
-
 }

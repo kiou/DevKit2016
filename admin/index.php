@@ -4,11 +4,11 @@
 	/**
 	 * Initialisation 
 	 */
+	use Lib\Tool;
+
 	$erreur = array();
 	$succes = '';
 	$email = '';
-
-	use Lib\Tool;
 
 	/**
 	 * Formulaire
@@ -91,10 +91,8 @@
 			<h1>Connectez-vous pour accéder à l'admin</h1>
 
 			<?php
-				if(!empty($erreur)){
-					Tool::getErreur($erreur, 'erreur');
-				}
-
+				if(!empty($erreur)){ Tool::getMessage($erreur, 'erreur'); }
+				
 				echo Tool::getFlash();
 			?>
 

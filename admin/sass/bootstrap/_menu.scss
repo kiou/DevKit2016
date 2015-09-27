@@ -9,9 +9,8 @@
 	background-color: #fff;
 	padding: 20px;
 	z-index: 999;
-	border: 1px solid $grisBordure;
 	&.shadow{
-		@include box-shadow($grisTresClair 2px 2px 20px);
+		@include box-shadow(lighten($grisTresClair,20%) 2px 2px 12px);
 	}
 	ul{
 		list-style: none;
@@ -43,6 +42,9 @@
 		border-bottom: 1px solid $grisNoir;
 		position: relative;
 		font-weight: 300;
+		@include transition-property(color);
+		@include transition-duration(0.3s);
+		@include transition-timing-function(ease);
 		.fa:first-child{
 			padding-right: 15px;
 		}
@@ -56,20 +58,29 @@
 		}
 		&:hover{
 			color: $turquoise;
-		}
-		&.current:after{
-			content: '';
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			bottom: 0px;
-			width: 10px;
-			background-color: $turquoise;
+			.fa-angle-right{
+				color: $turquoise;
+			}
 		}
 		&.active{
 			.fa-angle-right{
+				@include transform(rotateZ(90deg));
+			}
+		}
+		&.current{
+			color: $turquoise;
+			.fa-angle-right{
 				color: $turquoise;
 				@include transform(rotateZ(90deg));
+			}
+			&:after{
+				content: '';
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				bottom: 0px;
+				width: 10px;
+				background-color: $turquoise;
 			}
 		}
 	}
@@ -89,10 +100,19 @@
 				display: block;
 				color: darken(#fff, 20%);
 				font-weight: 300;
+				@include transition-property(color);
+				@include transition-duration(0.3s);
+				@include transition-timing-function(ease);
 				.fa{
 					padding-right: 5px;
+					font-size: 13px;
 				}
 				&:hover{
+					color: $turquoise;
+				}
+			}
+			&.current{
+				a{
 					color: $turquoise;
 				}
 			}

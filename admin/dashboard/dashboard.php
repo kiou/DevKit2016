@@ -5,9 +5,8 @@
 	 * Initialisation
 	 */
 	use Lib\Tool;
-	use Lib\BreadCrumb;
-	Tool::ifConnect(BASEADMIN);
 
+	Tool::ifConnect(BASEADMIN);
 ?>
 <!doctype html>
 <html lang="fr">

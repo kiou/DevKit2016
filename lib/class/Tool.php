@@ -25,15 +25,22 @@
 		 * Affichage du tableau d'erreur
 		 * @param array la liste des erreurs
 		 */
-		public static function getErreur ($erreur = array()) {
+		public static function getMessage ($messages = array(), $type) {
 	
-			if(!empty($erreur)){
-				echo'<div class="message" id="erreur">';
+			if(!empty($messages)){
+				echo'<div class="message" id="'.$type.'">';
 					echo'<span class="messageCouleur"></span>';
-					echo'<h3>Erreur</h3>';
+					switch ($type) {
+						case 'succes':
+							echo '<h3>Succès</h3>';
+						break;
+						case 'erreur':
+							echo '<h3>Erreur</h3>';
+						break;
+					}
 					echo'<p>';
-						foreach($erreur as $element){
-							echo $element.'<br>';
+						foreach($messages as $message){
+							echo $message.'<br>';
 						}
 					echo'</p>';
 				echo'</div>';
@@ -155,7 +162,7 @@
 		        $precedente = $page-1;
 		        if ($precedente > 0){
 		            echo ('<li>');
-		                echo ('<a href="'.$url.$pattern.$precedente.'" class="nav left">Prec</a>');
+		                echo ('<a href="'.$url.$pattern.$precedente.'">Prec</a>');
 		            echo('</li>');
 		        }
 
@@ -186,7 +193,7 @@
 		        $suivante = $page+1;
 		        if ($suivante <= $count){
 		            echo ('<li>');
-		                echo ('<a href="'.$url.$pattern.$suivante.'" class="nav right">Suiv</a>');
+		                echo ('<a href="'.$url.$pattern.$suivante.'">Suiv</a>');
 		            echo('</li>');
 		        }
 

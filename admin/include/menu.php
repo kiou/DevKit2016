@@ -15,8 +15,8 @@
 
 	<a href="#" data-nav="utilisateur-menu" class="menuNav <?= Lib\Tool::getCurrentMenu($utilisateurMenu) ?>"> <i class="fa fa-user"></i> Utilisateurs <i class="fa fa-angle-right"></i></a>
 	<ul id="utilisateur-menu" class="<?= Lib\Tool::getCurrentMenu($utilisateurMenu) ?>">
-		<li class="<?php Lib\Tool::getCurrentMenu(array('addUtilisateur.php')); ?>"><a href="<?= BASEADMIN ?>utilisateur/addUtilisateur.php"><i class="fa fa-circle-o"></i> Ajouter un utilisateur</a></li>
-		<li class="<?php Lib\Tool::getCurrentMenu(array('managerUtilisateur.php')); ?>"><a href="<?= BASEADMIN ?>utilisateur/managerUtilisateur.php"><i class="fa fa-circle-o"></i> Gestion des utilisateurs</a></li>
+		<li class="<?= Lib\Tool::getCurrentMenu(array('addUtilisateur.php')); ?>"><a href="<?= BASEADMIN ?>utilisateur/addUtilisateur.php"><i class="fa fa-circle-o"></i> Ajouter un utilisateur</a></li>
+		<li class="<?= Lib\Tool::getCurrentMenu(array('managerUtilisateur.php')); ?>"><a href="<?= BASEADMIN ?>utilisateur/managerUtilisateur.php"><i class="fa fa-circle-o"></i> Gestion des utilisateurs</a></li>
 	</ul>
 
 </nav>
