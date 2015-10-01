@@ -27,14 +27,14 @@
 		if(empty($erreur)){
 
 			$sql = $bdd->prepare("SELECT * FROM utilisateur
-								  WHERE utilisateurEmail =  :email
+								  WHERE utilisateurEmail = :email
 								  AND utilisateurPasse = :pass ");
 			$sql->execute(array(
-				'email' => $_POST['email'],
-				'pass' => sha1(sha1($_POST['passe']).KEYSHA1)
+					'email' => $_POST['email'],
+					'pass' => sha1(sha1($_POST['passe']).KEYSHA1)
 				));
 			$data = $sql->fetchObject();
-			
+
 			/* Si le compte utilisateur n'existe pas */
 			if($sql->rowCount() == 0) array_push($erreur,'Votre e-mail ou votre mot de passe est incorrect');
 			else{
@@ -53,13 +53,13 @@
 
 						header('location:'.BASEADMIN.'dashboard/dashboard.php');
 
+						die();
+
 					}
 
 				}
 
 			}
-
-			die();
 
 		}
 

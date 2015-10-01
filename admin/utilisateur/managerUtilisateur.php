@@ -62,6 +62,16 @@
 
 			<div id="content">
 
+                <!-- Recherche -->
+                <div id="recherche">
+
+                    <form action="#" method="post">
+                        <input type="text" name="recherche" class="form-elem medium" placeholder="Recherche" value="<?php echo $recherche ?>">
+                        <button name="addRecherche" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+
+                </div>
+
                 <?= Tool::getFlash() ?>
 
                 <!-- Tableau de gestion -->
@@ -77,6 +87,8 @@
 
                         $requete = "SELECT * FROM utilisateur 
                                     INNER JOIN utilisateur_role ON roleId = utilisateurRole ";
+                                    if(!empty($recherche))
+                                        $requete .= " WHERE CONCAT(utilisateurNom,utilisateurPrenom) LIKE '%$recherche%' ";
                                     $requete .= " ORDER BY utilisateurId DESC
                                     LIMIT $debut, 50 ";
 
@@ -142,6 +154,9 @@
                         
                     <?php
                         $requete = "SELECT COUNT(utilisateurId) AS total FROM utilisateur ";
+                                    if(!empty($recherche))
+                                        $requete .= " WHERE CONCAT(utilisateurNom,utilisateurPrenom) LIKE '%$recherche%' ";
+                                    
                         Tool::addPaginate($requete,BASEADMIN.'utilisateur/managerUtilisateur',50,$page,$bdd);
                     ?>
 

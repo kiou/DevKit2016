@@ -1,5 +1,5 @@
 <?php
-	$utilisateurMenu = array('managerUtilisateur.php','addUtilisateur.php','editUtilisateur.php');
+	$utilisateurMenu = array('managerUtilisateur.php','addUtilisateur.php','editUtilisateur.php','editPasse.php');
 ?>
 <nav id="menu">
 	

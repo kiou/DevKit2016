@@ -137,7 +137,7 @@ label{
 
 /* Class de base pour la mise en forme des boutons */
 .form-submit{
-	@include border-radius(4px);
+	@include border-radius(3px);
 	width: 100%;
 	padding: 10px 0px;
 	border: 1px solid transparent;
@@ -187,5 +187,33 @@ label{
 	}
 	&.big{
 		max-width: 524px;
+	}
+	.fa{
+		margin-right: 5px;
+	}
+}
+
+#recherche{
+	width: 100%;
+	margin-bottom: 30px;
+	text-align: right;
+	input,
+	select{
+		margin-bottom: 0px;
+		display: inline-block;
+		margin-left: -5px;
+	}
+	select{
+		padding: 11px;
+	}
+	button{
+		height: 43px;
+		width: 43px;
+		border: none;
+		cursor: pointer;
+		font-size: 17px;
+		background: none;
+		display: inline-block;
+		color: $grisClair;
 	}
 }

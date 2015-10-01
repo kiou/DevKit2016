@@ -17,15 +17,18 @@
 
 			if(!empty($breadcrumb)){
 
-				echo'<ul id="breadcrumb">';
-					foreach ($breadcrumb as $nom => $lien) {
-						if(empty($lien)){
-							echo'<li class="active">'.$nom.'</li> ';
-						}else{
-							echo'<li><a href="'.$base.$lien.'">'.$nom.'</a> <span class="divider">/</span></li>';
+				echo '<div id="breadcrumb">';
+					echo'<ul>';
+						foreach ($breadcrumb as $nom => $lien) {
+							if(empty($lien)){
+								echo'<li class="active">'.$nom.'</li> ';
+							}else{
+								echo'<li><a href="'.$base.$lien.'">'.$nom.'</a> <span class="divider">/</span></li>';
+							}
 						}
-					}
-				echo'</ul>';
+						echo'<div class="clear"></div>';
+					echo'</ul>';
+				echo'</div>';
 
 			}
 
