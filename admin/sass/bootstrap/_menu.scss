@@ -88,7 +88,7 @@
 		display: none;
 		width: 100%;
 		background-color: $grisFonce;
-		border-bottom: 1px solid grisNoir;
+		border-bottom: 1px solid $grisNoir;
 		&.current{
 			display: block
 		}

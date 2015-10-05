@@ -1,4 +1,4 @@
-# DevKit2016
+﻿# DevKit2016
 
 Mise en place des éléments de base pour le développement d'applications web
 - Composer
@@ -28,7 +28,7 @@ Ouvrir le fichier : `lib/app/config.php`
 
 `BASEFRONT -> l'url de l'administration`
 
-Pourles 2 urls ne pas oublier le "/" à la fin
+Pour les 2 urls ne pas oublier le "/" à la fin
 
 #### Base de donnée
 
@@ -42,6 +42,6 @@ Pourles 2 urls ne pas oublier le "/" à la fin
 
 #### Cryptage
 
-`KEYSHA1 -> la cél de salage pour le cryptage`
+`KEYSHA1 -> la clé de salage pour le cryptage`
 
 `

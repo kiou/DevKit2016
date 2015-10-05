@@ -22,6 +22,6 @@
 
 	<script type="text/javascript" src="<?= BASEFRONT ?>js/jquery.js"></script>
 	<script type="text/javascript" src="<?= BASEFRONT ?>js/app.js"></script>	
-	
+
 </body>
 </html>
