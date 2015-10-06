@@ -7,6 +7,8 @@ Mise en place des éléments de base pour le développement d'applications web
 - Arborescence
 - Administration avec Bootstrap simple d'utilisation / reponsive
 - Class de base dans le namespace \Lib\ (à compléter)
+- Crop d'image / Js
+- Wysiwyg Tinymce 4.2
 
 ## Connexion
 ![alt tag](http://intranet.colocarts.com/git/connexion.jpg)
@@ -43,5 +45,3 @@ Pour les 2 urls ne pas oublier le "/" à la fin
 #### Cryptage
 
 `KEYSHA1 -> la clé de salage pour le cryptage`
-
-`
