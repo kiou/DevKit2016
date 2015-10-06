@@ -7,8 +7,8 @@ Mise en place des éléments de base pour le développement d'applications web
 - Arborescence
 - Administration avec Bootstrap simple d'utilisation / reponsive
 - Class de base dans le namespace \Lib\ (à compléter)
-- Crop d'image / Js
-- Wysiwyg Tinymce 4.2
+- Crop d'image / Js http://odyniec.net/projects/imgareaselect/
+- Wysiwyg Tinymce 4.2 http://www.tinymce.com/
 
 ## Connexion
 ![alt tag](http://intranet.colocarts.com/git/connexion.jpg)
