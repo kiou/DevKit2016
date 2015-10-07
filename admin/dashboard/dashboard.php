@@ -50,8 +50,8 @@
 
 	</main>
 
-	<script type="text/javascript" src="<?= BASEFRONT ?>js/jquery.js"></script>
-	<script type="text/javascript" src="<?= BASEFRONT ?>js/jquery-ui.js"></script>
+	<script type="text/javascript" src="<?= BASEFRONT ?>js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="<?= BASEFRONT ?>js/jquery/jquery-ui.js"></script>
 	<script type="text/javascript" src="<?= BASEADMIN ?>js/app.js"></script>	
 	
 </body>
