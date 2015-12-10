@@ -10,6 +10,7 @@
 	$_SESSION['utilisateur']['id'] = 'visiteur';
 	$_SESSION['utilisateur']['nom'] = '';
 	$_SESSION['utilisateur']['prenom'] = '';
+	$_SESSION['role']['id'] = '';
 
 	Tool::setFlash('Vous êtes maintenant déconnecté','succes');
 

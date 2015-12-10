@@ -11,7 +11,7 @@
     $nom = '';
     $prenom = '';
     $email = '';
-    $role = '';
+    $roleForm = '';
     $passe = '';
     $confirmation = '';
     $succes = array();
@@ -28,7 +28,7 @@
         $nom = $_POST['nom'];
         $prenom = $_POST['prenom'];
         $email = $_POST['email'];
-        $role = $_POST['role'];
+        $roleForm = $_POST['role'];
         $passe = $_POST['passe'];
         $confirmation = $_POST['confirmation'];
 
@@ -37,7 +37,7 @@
          */
         if(empty($nom)) array_push($erreur, 'Le nom');
         if(empty($prenom)) array_push($erreur, 'Le prenom');
-        if(empty($role)) array_push($erreur, 'Le rôle');
+        if(empty($roleForm)) array_push($erreur, 'Le rôle');
         if(empty($email)) array_push($erreur, 'L\'email');
         else{
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)) array_push($erreur, 'Le format de l\'email n\'est pas bon');
@@ -67,7 +67,7 @@
                                   VALUES 
                                   (:created, :nom, :prenom, :email, :role, :passe) ");
             $sql->execute(array(
-                    'created' => Lib\Tool::dateTime('Y-m-d H:i'),
+                    'created' => Tool::dateTime('Y-m-d H:i'),
                     'nom' => $_POST['nom'],
                     'prenom' => $_POST['prenom'],
                     'email' => $_POST['email'],
@@ -84,7 +84,7 @@
             $nom = '';
             $prenom = '';
             $email = '';
-            $role = '';
+            $roleForm = '';
             $passe = '';
             $confirmation = '';
 
@@ -100,6 +100,7 @@
 	<meta name="viewport" content="width=device-width; initial-scale=1;">
 	<title><?= TITLEBACK ?></title>
 	<link rel="icon" type="image/png" href="<?= BASEADMIN ?>img/layout/favicon.png">
+    <link href="<?= BASEFRONT ?>js/scroll/scroll.css" rel="stylesheet" type="text/css">
 	<link href="<?= BASEADMIN ?>css/app.css" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]>
 		<script src="<?= BASEFRONT ?>js/html5.js"></script>
@@ -151,7 +152,7 @@
                                                 ORDER BY roleNom ASC ");
                             while($data = $sql->fetchObject()){
 
-                                if($data->roleId == $role)
+                                if($data->roleId == $roleForm)
                                     echo'<option value="'.$data->roleId.'" selected>'.$data->roleNom.'</option>';
                                 else
                                     echo'<option value="'.$data->roleId.'">'.$data->roleNom.'</option>';
@@ -181,6 +182,7 @@
 
 	<script type="text/javascript" src="<?= BASEFRONT ?>js/jquery/jquery.js"></script>
 	<script type="text/javascript" src="<?= BASEFRONT ?>js/jquery/jquery-ui.js"></script>
+    <script type="text/javascript" src="<?= BASEFRONT ?>js/scroll/scroll.js"></script>
 	<script type="text/javascript" src="<?= BASEADMIN ?>js/app.js"></script>	
 	
 </body>

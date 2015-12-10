@@ -25,10 +25,11 @@
 
 #content{
 	padding: 30px;
+	position: relative;
 }
 
 #contentTitre{
-	width: 100%;
+	width: calc(100% - 60px);
 	background-color: $grisBlanc;
 	padding: 20px 30px 30px 30px;
 	p{
@@ -221,3 +222,17 @@
 	}
 }
 /* Menu */
+
+/* Patch pour tinymce */
+.mce-textbox{
+	&:focus{
+		padding-bottom: 0px;
+		border: 1px solid #c5c5c5;
+	}
+}
+
+.moxman-thumb{
+	img{
+		display: inline !important;
+	}
+}

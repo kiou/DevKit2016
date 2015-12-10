@@ -51,6 +51,8 @@
 						$_SESSION['utilisateur']['nom'] = $data->utilisateurNom;
 						$_SESSION['utilisateur']['prenom'] = $data->utilisateurPrenom;
 
+						$_SESSION['role']['id'] = $data->utilisateurRole;
+
 						header('location:'.BASEADMIN.'dashboard/dashboard.php');
 
 						die();

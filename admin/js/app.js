@@ -5,6 +5,8 @@ $(document).ready(function(){
       track: true
     });
 
+    $('#menu').perfectScrollbar();
+
     /* DropDown */
     $('.dropDown').on('click',function(){
 

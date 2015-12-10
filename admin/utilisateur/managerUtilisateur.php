@@ -36,6 +36,7 @@
 	<meta name="viewport" content="width=device-width; initial-scale=1;">
 	<title><?= TITLEBACK ?></title>
 	<link rel="icon" type="image/png" href="<?= BASEADMIN ?>img/layout/favicon.png">
+    <link href="<?= BASEFRONT ?>js/scroll/scroll.css" rel="stylesheet" type="text/css">
 	<link href="<?= BASEADMIN ?>css/app.css" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]>
 		<script src="<?= BASEFRONT ?>js/html5.js"></script>
@@ -170,6 +171,7 @@
 
 	<script type="text/javascript" src="<?= BASEFRONT ?>js/jquery/jquery.js"></script>
 	<script type="text/javascript" src="<?= BASEFRONT ?>js/jquery/jquery-ui.js"></script>
+    <script type="text/javascript" src="<?= BASEFRONT ?>js/scroll/scroll.js"></script>
 	<script type="text/javascript" src="<?= BASEADMIN ?>js/app.js"></script>	
 	
 </body>
