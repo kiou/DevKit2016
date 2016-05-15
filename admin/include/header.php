@@ -18,7 +18,7 @@
 		<div id="headerCompteMenu" class="dropDownMenu shadow">
 			<ul>
 				<li><a href="<?= BASEADMIN ?>compte/editCompte.php">Mes informations <i class="fa fa-user"></i></a></li>
-				<li><a href="<?= BASEADMIN ?>compte/editPasse.php">Mont mot de passe <i class="fa fa-unlock-alt"></i></a></li>
+				<li><a href="<?= BASEADMIN ?>compte/editPasseCompte.php">Mont mot de passe <i class="fa fa-unlock-alt"></i></a></li>
 				<li><a href="<?= BASEADMIN.'deco.php' ?>">Déconnexion <i class="fa fa-power-off"></i></a></li>
 			</ul>
 		</div>

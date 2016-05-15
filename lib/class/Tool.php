@@ -127,24 +127,6 @@
 		}
 
 		/**
-		 * Page en cours dans une liste ( ajout de la classe current )
-		 * @param array la liste de pages à comparer 
-		 */
-		public static function getCurrentMenu ($pages){
-
-			$current  = self::getUrl();
-
-			foreach ($pages as $page) {
-				if(!is_numeric($page) && $current  == $page) return 'current';
-				else{
-					$pageUrl = (isset($_GET['page'])) ? $_GET['page'] : '';
-					if($pageUrl == $page) return 'current';
-				}
-			}
-
-		}
-
-		/**
 		 * Pagination
 		 * @param string la requéte SQL
 		 * @param string L'url pour la pagination

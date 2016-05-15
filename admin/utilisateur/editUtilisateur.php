@@ -11,7 +11,7 @@
     $utilisateurId = Tool::getId($_GET['utilisateur'],BASEADMIN);
 
     Tool::ifConnect(BASEADMIN);
-    Action::ifUtilisateurAdmin($utilisateurId,$bdd);
+    Action::ifIsset($utilisateurId,'utilisateur',BASEADMIN.'utilisateur/managerUtilisateur.php',$bdd);
 
     $succes = array();
     $erreur = array();

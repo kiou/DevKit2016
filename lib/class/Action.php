@@ -8,24 +8,28 @@
 	class Action{
 
 		/**
-		 * Verification de l'utilisateur
-		 * @param int l'identifiant de l'utilisateur
+		 * Verification de l'existance d'un élément en BDD
+		 * @param int l'identifiant de lélément
+		 * @param string le nom de la table
+		 * @param string l'url de
 		 * @param object PDO
 		 */
-		public static function ifUtilisateurAdmin($utilisateur, $bdd){
+		public static function ifIsset($id, $name, $url, $bdd){
 
-			$sql = $bdd->prepare("SELECT COUNT(utilisateurId) AS count FROM utilisateur
-								  WHERE utilisateurId = :utilisateurId ");
+			$nameId = $name.'Id';
+
+			$sql = $bdd->prepare("SELECT $nameId FROM $name
+								  WHERE $nameId = :$nameId ");
 
 			$sql->execute(array(
-					'utilisateurId' => $utilisateur
+					$nameId => $id
 				)
 			);
 
 			if($sql->rowCount() == 0){
 
 				Tool::setFlash('Erreur identifiant','erreur');
-				header('location:'.BASEADMIN.'utilisateur/manageurUtilisateur.php');
+				header('location:'.$url);
 				die();
 
 			}

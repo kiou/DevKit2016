@@ -96,6 +96,34 @@ $(document).ready(function(){
 
     });
 
+    /* Administration du menu */
+    /* Menu avec indentation */
+    $('ol.sortable').nestedSortable({
+        handle: 'div',
+        items: 'li',
+        toleranceElement: '> div',
+        revert: 250,
+        maxLevels: 3,
+        forcePlaceholderSize: true,
+        placeholder: 'placeholder',
+        excludeRoot: true,
+        update:function(){
+
+            var sortable = $(this);
+            var results = sortable.nestedSortable('toArray');
+            var url = sortable.attr('data-url');
+
+            $.ajax(url,{
+                method:"POST",
+                data:{data:results}
+            })
+            .fail(function(){
+                 alert('Erreur Ajax');
+            });
+
+        }
+    });
+
     /* Resize de la fenêtre du navigateur */
     $(window).resize(function() {
 
