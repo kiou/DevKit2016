@@ -5,7 +5,6 @@
 	 * Initialisation
 	 */
 	use Lib\Tool;
-	use Lib\Mail;
 
 	Tool::ifConnect(BASEADMIN);
 ?>
@@ -45,7 +44,7 @@
 			<div id="content">
 
 				<?= Tool::getFlash(); ?>
-
+				
 			</div>
 
 		</div>

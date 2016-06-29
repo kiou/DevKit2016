@@ -7,7 +7,6 @@
 	use Lib\Tool;
 
 	$erreur = array();
-	$succes = '';
 	$email = '';
 
 	/**
@@ -88,7 +87,7 @@
 
 		<div id="connexionContent">
 
-			<img src="<?= BASEADMIN ?>img/layout/logo.png" id="connexionLogo">
+			<a href="<?= BASEADMIN ?>"><img src="<?= BASEADMIN ?>img/layout/logo.png" id="connexionLogo"></a>
 
 			<h1>Connectez-vous pour accéder à l'admin</h1>
 
@@ -102,14 +101,15 @@
 				
 				<input type="text" name="email" placeholder="Email" value="<?= $email ?>" class="form-elem">
 				
-				<input type="text" name="passe" placeholder="Mot de passe" class="form-elem">
+				<input type="password" name="passe" placeholder="Mot de passe" class="form-elem">
 
-				<button name="add" type="submit" class="form-submit turquoise">Connexion</button>
+				<button name="add" type="submit" class="form-submit turquoise">Se connecter</button>
 		
 			</form>
 
 			<div id="connexionMention">
 				<p>© <?= CLIENTNOM ?> - <?= date("Y") ?> | Tous droits réservés.</p>
+				<p><a href="<?= BASEADMIN ?>oublie.php">J'ai oublié mon mote de passe</a></p>
 			</div>
 
 		</div>

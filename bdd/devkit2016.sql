@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 15 Mai 2016 à 14:09
+-- Généré le :  Mer 29 Juin 2016 à 17:39
 -- Version du serveur :  5.6.15-log
--- Version de PHP :  5.6.0
+-- Version de PHP :  5.6.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `utilisateurEmail` varchar(160) CHARACTER SET utf8 NOT NULL,
   `utilisateurPasse` varchar(128) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`utilisateurId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `utilisateur`
@@ -63,6 +63,20 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 
 INSERT INTO `utilisateur` (`utilisateurId`, `utilisateurCreated`, `utilisateurChanged`, `utilisateurRole`, `utilisateurNom`, `utilisateurPrenom`, `utilisateurEtat`, `utilisateurEmail`, `utilisateurPasse`) VALUES
 (1, '2015-06-13 00:00:00', '2016-05-15 11:33:00', 1, 'Pinelli', 'luc', 1, 'admin@colocarts.com', '1fab942889e352164e44b08114b857111955d31e');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `utilisateur_oublier`
+--
+
+CREATE TABLE IF NOT EXISTS `utilisateur_oublier` (
+  `oublierId` int(11) NOT NULL AUTO_INCREMENT,
+  `oublierCreated` datetime NOT NULL,
+  `oublierUtilisateur` int(11) NOT NULL,
+  `oublierToken` varchar(255) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`oublierId`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

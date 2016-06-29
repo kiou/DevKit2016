@@ -28,11 +28,12 @@
 	width: 100%;
 	text-align: center;
 	padding-top: 30px;
-	p{
+	p,a{
 		color: #fff;
 		font-size: 13px;
 		line-height: 19px;
 	}
+	a{color: $turquoise;}
 }
 
 /* Menu sortable administration */
