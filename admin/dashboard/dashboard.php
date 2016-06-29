@@ -5,6 +5,7 @@
 	 * Initialisation
 	 */
 	use Lib\Tool;
+	use Lib\Mail;
 
 	Tool::ifConnect(BASEADMIN);
 ?>

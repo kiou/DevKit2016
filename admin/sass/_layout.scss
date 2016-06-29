@@ -6,20 +6,22 @@
 	right: 0px;
 	bottom: 0px;
 	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
 }
 
 #container{
+	overflow: hidden;
 	z-index: 2;
 	position: relative;
-	margin-left: 280px;
+	@include transform(translateX(280px));
 	width: calc(100% - 280px);
 	min-height: 100%;
 	background-color: $grisBleu;
-	@include transition-property(margin-left,width);
+	@include transition-property(width, transform);
 	@include transition-duration(0.4s);
 	@include transition-timing-function(ease);
 	&.active{
-		margin-left: 280px;
+		@include transform(translateX(280px));
 	}
 }
 
@@ -188,11 +190,11 @@
 	height: 100%;
 	background-color: $grisClair;
 	overflow-y: auto;
-	@include transition-property(left);
+	@include transition-property(transform);
 	@include transition-duration(0.4s);
 	@include transition-timing-function(ease);
 	&.active{
-		left: 0px;
+		@include transform(translateX(0px));
 	}
 }
 

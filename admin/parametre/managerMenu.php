@@ -48,7 +48,10 @@
 
                 <div id="sortable">
                     <?php
-                        Menu::getMenuAdmin(3, null, $bdd);
+                    	$sql = $bdd->query("SELECT * FROM menu");
+                    	if($sql->rowCount() == 0) echo '<p>Aucun menu</p>';
+                    	else 
+                    		 Menu::getMenuAdmin(3, null, $bdd);
                     ?>
                 </div>
 

@@ -5,11 +5,11 @@
 	}
 
 	#menu {
-		left: -180px;
+		@include transform(translateX(-180px));
 	}
 
 	#container{
-		margin-left: 0px;
+		@include transform(translateX(0px));
 		width: 100%;
 	}
 
