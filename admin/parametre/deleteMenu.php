@@ -5,12 +5,13 @@
     /**
      * Initialisation
      */
+    use Lib\Utilisateur;
     use Lib\Tool;
     use Lib\Action;
 
     $menuId = Tool::getId($_GET['menu'],BASEADMIN);
 
-    Tool::ifConnect(BASEADMIN);
+    Utilisateur::ifConnect();
     Action::ifIsset($menuId,'menu',BASEADMIN.'menu/managerMenu.php',$bdd);
 
     $sql = $bdd->prepare("DELETE FROM menu

@@ -4,10 +4,11 @@
 	/**
 	 * Initialisation
 	 */
+	use Lib\Utilisateur;
 	use Lib\Tool;
 	use Lib\Search;
 
-	Tool::ifConnect(BASEADMIN);
+	Utilisateur::ifConnect();
 
     /**
      * Variables de recherche
@@ -38,9 +39,6 @@
 	<link rel="icon" type="image/png" href="<?= BASEADMIN ?>img/layout/favicon.png">
     <link href="<?= BASEFRONT ?>js/scroll/scroll.css" rel="stylesheet" type="text/css">
 	<link href="<?= BASEADMIN ?>css/app.css" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]>
-		<script src="<?= BASEFRONT ?>js/html5.js"></script>
-	<![endif]-->
 </head>
 
 <body>
@@ -111,7 +109,7 @@
                                  */
                                 echo '<td class="left">';
                                     echo '<p class="tableDate"> Ajout : '.Tool::dateTime('d/m/Y à H:i',$data->utilisateurCreated).'</p>';
-                                    if($data->utilisateurChanged != '0000-00-00 00:00:00')
+                                    if(!is_null($data->utilisateurChanged))
                                         echo'<p class="tableDate">Modification : '.Tool::dateTime('d/m/Y à H:i',$data->utilisateurChanged).'</p>';
                                     echo '<p><strong>'.$data->utilisateurPrenom.' '.$data->utilisateurNom.'</strong></p>';
                                     echo '<p><a href="mailto:'.$data->utilisateurEmail.'">'.$data->utilisateurEmail.'</a></p>';

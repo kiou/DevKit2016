@@ -4,12 +4,13 @@
     /**
      * Initialisation
      */
+    use Lib\Utilisateur;
     use Lib\Tool;
     use Lib\Action;
 
     $utilisateurId = Tool::getId($_GET['utilisateur']);
 
-    Tool::ifConnect(BASEADMIN);
+    Utilisateur::ifConnect();
     Action::ifIsset($utilisateurId,'utilisateur',BASEADMIN.'utilisateur/managerUtilisateur.php',$bdd);
 
     /* L'etat du contenu en cours */

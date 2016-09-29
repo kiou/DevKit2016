@@ -4,9 +4,9 @@
     /**
      * Initialisation
      */
-    use Lib\Tool;
+    use Lib\Utilisateur;
 
-    Tool::ifConnect(BASEADMIN);
+    Utilisateur::ifConnect();
     
     /* Mise à jour du menu */
     if(isset($_POST['data'])){

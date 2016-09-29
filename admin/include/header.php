@@ -13,7 +13,7 @@
 	</a>
 
 	<div id="headerCompte" class="dropDown">
-		<p><?= substr($_SESSION['utilisateur']['nom'],0,1).'.'.$_SESSION['utilisateur']['prenom'] ?> <i class="fa fa-angle-right"></i></p>
+		<p><?= substr(Lib\Utilisateur::getCurrentUtilisateur($bdd)->utilisateurNom,0,1).'.'.Lib\Utilisateur::getCurrentUtilisateur($bdd)->utilisateurPrenom ?> <i class="fa fa-angle-right"></i></p>
 
 		<div id="headerCompteMenu" class="dropDownMenu shadow">
 			<ul>

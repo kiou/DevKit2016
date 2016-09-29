@@ -47,9 +47,6 @@
 					else{
 
 						$_SESSION['utilisateur']['id'] = $data->utilisateurId;
-						$_SESSION['utilisateur']['nom'] = $data->utilisateurNom;
-						$_SESSION['utilisateur']['prenom'] = $data->utilisateurPrenom;
-
 						$_SESSION['role']['id'] = $data->utilisateurRole;
 
 						header('location:'.BASEADMIN.'dashboard/dashboard.php');
@@ -76,9 +73,6 @@
 	<title><?= TITLEBACK ?></title>
 	<link rel="icon" type="image/png" href="<?= BASEADMIN ?>img/layout/favicon.png">
 	<link href="<?= BASEADMIN ?>css/app.css" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]>
-		<script src="<?= BASEFRONT ?>js/html5.js"></script>
-	<![endif]-->
 </head>
 
 <body id="connexion">

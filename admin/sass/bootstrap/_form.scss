@@ -9,6 +9,19 @@
 	color: $grisClair;
 }
 
+/* regroupement de champ */
+.form-bloc{
+	padding: 20px;
+	background-color: $grisBlanc;
+	@include border-radius(4px);
+	h3{
+		padding-bottom: 15px;
+	}
+	input:last-child{
+		margin-bottom: 0px;
+	}
+}
+
 /* Design pour le placeholder */
 @mixin input-placeholder {
     &:-moz-placeholder { @content; }

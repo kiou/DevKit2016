@@ -189,7 +189,7 @@
 	z-index: 1;
 	height: 100%;
 	background-color: $grisClair;
-	overflow-y: auto;
+	overflow-y: hidden;
 	@include transition-property(transform);
 	@include transition-duration(0.4s);
 	@include transition-timing-function(ease);

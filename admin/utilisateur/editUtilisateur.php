@@ -4,13 +4,14 @@
 	/**
 	 * Initialisation
 	 */
+	use Lib\Utilisateur;
     use Lib\Tool;
     use Lib\Action;
     use Lib\BreadCrumb;
 
     $utilisateurId = Tool::getId($_GET['utilisateur'],BASEADMIN);
 
-    Tool::ifConnect(BASEADMIN);
+    Utilisateur::ifConnect();
     Action::ifIsset($utilisateurId,'utilisateur',BASEADMIN.'utilisateur/managerUtilisateur.php',$bdd);
 
     $succes = array();
@@ -100,9 +101,6 @@
 	<link rel="icon" type="image/png" href="<?= BASEADMIN ?>img/layout/favicon.png">
     <link href="<?= BASEFRONT ?>js/scroll/scroll.css" rel="stylesheet" type="text/css">
 	<link href="<?= BASEADMIN ?>css/app.css" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]>
-		<script src="<?= BASEFRONT ?>js/html5.js"></script>
-	<![endif]-->
 </head>
 
 <body>

@@ -4,9 +4,10 @@
 	/**
 	 * Initialisation
 	 */
+	use Lib\Utilisateur;
 	use Lib\Tool;
 
-	Tool::ifConnect(BASEADMIN);
+	Utilisateur::ifConnect();
 
 	$succes = array();
 	$erreur = array();
@@ -57,12 +58,6 @@
                 )
             ); 
 
-            /**
-             * Mise à jour de la session
-             */
-            $_SESSION['utilisateur']['nom'] = $_POST['nom']; 
-            $_SESSION['utilisateur']['prenom'] = $_POST['prenom']; 
-
             /* Message de succès */
             array_push($succes, 'Informations modifiées avec succès');
 
@@ -90,9 +85,6 @@
 	<link rel="icon" type="image/png" href="<?= BASEADMIN ?>img/layout/favicon.png">
     <link href="<?= BASEFRONT ?>js/scroll/scroll.css" rel="stylesheet" type="text/css">
 	<link href="<?= BASEADMIN ?>css/app.css" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]>
-		<script src="<?= BASEFRONT ?>js/html5.js"></script>
-	<![endif]-->
 </head>
 
 <body>

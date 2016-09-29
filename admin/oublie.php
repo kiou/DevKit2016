@@ -84,9 +84,6 @@
 	<title><?= TITLEBACK ?></title>
 	<link rel="icon" type="image/png" href="<?= BASEADMIN ?>img/layout/favicon.png">
 	<link href="<?= BASEADMIN ?>css/app.css" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]>
-		<script src="<?= BASEFRONT ?>js/html5.js"></script>
-	<![endif]-->
 </head>
 
 <body id="connexion">

@@ -9,19 +9,6 @@
 	class Tool {
 
 		/**
-		 * Verifier si l'utilisateur est connecté
-		 * @param string l'url de redirection si la personne n'est pas connecté
-		 */
-		public static function ifConnect($url){
-
-			if(!isset($_SESSION['utilisateur']['id']) || $_SESSION['utilisateur']['id'] == 'visiteur'){
-				header('location:'.$url);
-				die();
-			}
-				
-		}
-
-		/**
 		 * Affichage du tableau d'erreur
 		 * @param array la liste des erreurs
 		 */
