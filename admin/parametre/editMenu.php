@@ -12,7 +12,7 @@
     $menuId = Tool::getId($_GET['menu'],BASEADMIN);
 
     Utilisateur::ifConnect();
-    Action::ifIsset($menuId,'menu',BASEADMIN.'parametre/managerMenu.php',$bdd);
+    Action::ifIsset($menuId,'menu',BASEADMIN.'parametre/managerMenu.php');
 
     $succes = array();
     $erreur = array();

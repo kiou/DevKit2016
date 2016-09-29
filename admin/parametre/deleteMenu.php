@@ -12,7 +12,7 @@
     $menuId = Tool::getId($_GET['menu'],BASEADMIN);
 
     Utilisateur::ifConnect();
-    Action::ifIsset($menuId,'menu',BASEADMIN.'menu/managerMenu.php',$bdd);
+    Action::ifIsset($menuId,'menu',BASEADMIN.'menu/managerMenu.php');
 
     $sql = $bdd->prepare("DELETE FROM menu
                           WHERE menuId = :menuId ");

@@ -12,7 +12,7 @@
     $utilisateurId = Tool::getId($_GET['utilisateur'],BASEADMIN);
 
     Utilisateur::ifConnect();
-    Action::ifIsset($utilisateurId,'utilisateur',BASEADMIN.'utilisateur/managerUtilisateur.php',$bdd);
+    Action::ifIsset($utilisateurId,'utilisateur',BASEADMIN.'utilisateur/managerUtilisateur.php');
 
     $succes = array();
     $erreur = array();

@@ -156,7 +156,7 @@
                                     if(!empty($recherche))
                                         $requete .= " WHERE CONCAT(utilisateurNom,utilisateurPrenom) LIKE '%$recherche%' ";
                                     
-                        Tool::addPaginate($requete,BASEADMIN.'utilisateur/managerUtilisateur',50,$page,$bdd);
+                        Tool::addPaginate($requete,BASEADMIN.'utilisateur/managerUtilisateur',50,$page);
                     ?>
 
                 </div>

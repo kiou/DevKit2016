@@ -120,9 +120,8 @@
 		 * @param int le nombre d'éléments par page
 		 * @param int la variable de la page en cours
 		 * @param bool so il y'a ubne réécriture d'url
-		 * @param objet l'accès à la BDD ( PDO )
 		 */
-		public static function addPaginate($requete,$url,$nombre,$page,$bdd, $reecriture = false){
+		public static function addPaginate($requete,$url,$nombre,$page, $reecriture = false){
 
 			$pattern = (!$reecriture) ? '.php?page=' : '/';
 
@@ -136,7 +135,7 @@
 		        }
 
 
-		        $sql = $bdd->query($requete);
+		        $sql = Database::getInstance()->bdd->query($requete);
 		        $data = $sql->fetch(); 
 		        $count = $data['total'];
 		        $count = ceil($count / $nombre); 

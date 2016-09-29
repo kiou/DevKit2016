@@ -11,13 +11,13 @@
 		/**
 		 * @var object instance de PDO
 		 */
-		private $bdd ;
+		public $bdd ;
+		private static $instance;
 
 		/**
 		 * Création de l'objet PDO
 		 */
 		public function __construct(){
-
 			try{
 				$bdd = new \PDO('mysql:host='.HOST.';dbname='.DBNAME,USER,PASS);
 				$bdd->exec("SET CHARACTER SET utf8");
@@ -26,15 +26,14 @@
 			catch(Exception $e){
 				die(' Impossible de se connecter &agrave; la base de donn&eacute;e');
 			}
-
 		}
 
-		/**
-		 * Retourne l'objet PDO
-		 * @return object
-		 */
-		public function getBdd(){
-			return $this->bdd;
+		public static function getInstance(){
+			if(is_null(self::$instance)){
+				self::$instance = new Database();
+			}
+
+			return self::$instance;
 		}
 
 	}

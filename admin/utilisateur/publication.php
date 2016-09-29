@@ -11,7 +11,7 @@
     $utilisateurId = Tool::getId($_GET['utilisateur']);
 
     Utilisateur::ifConnect();
-    Action::ifIsset($utilisateurId,'utilisateur',BASEADMIN.'utilisateur/managerUtilisateur.php',$bdd);
+    Action::ifIsset($utilisateurId,'utilisateur',BASEADMIN.'utilisateur/managerUtilisateur.php');
 
     /* L'etat du contenu en cours */
     $sql = $bdd->prepare("SELECT utilisateurEtat FROM utilisateur

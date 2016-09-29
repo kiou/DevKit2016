@@ -49,7 +49,7 @@
                     	$sql = $bdd->query("SELECT * FROM menu");
                     	if($sql->rowCount() == 0) echo '<p>Aucun menu</p>';
                     	else 
-                    		 Menu::getMenuAdmin(3, null, $bdd);
+                    		 Menu::getMenuAdmin(3, null);
                     ?>
                 </div>
 

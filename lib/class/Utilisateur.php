@@ -43,12 +43,12 @@
 		 * Donne des informations sur l'utilisateur connecté
 		 * @param  object PDO
 		 */
-		public static function getCurrentUtilisateur($bdd){
+		public static function getCurrentUtilisateur(){
 
 			if(!isset($_SESSION['utilisateur']['id']) || $_SESSION['utilisateur']['id'] == 'visiteur') return false;
 			else{
-				$sql = $bdd->prepare("SELECT * FROM utilisateur
-									  WHERE utilisateurId = :utilisateurId ");
+				$sql = Database::getInstance()->bdd->prepare("SELECT * FROM utilisateur
+									  						  WHERE utilisateurId = :utilisateurId ");
 				$sql->execute(array(
 						'utilisateurId' => $_SESSION['utilisateur']['id']
 					)

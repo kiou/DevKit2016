@@ -7,8 +7,7 @@
 	include dirname(dirname(__DIR__)).'/vendor/autoload.php';
 
 	/* Connexion à la BDD */
-	$database = new Lib\Database();
-	$bdd = $database->getBdd();
+	$bdd = Lib\Database::getInstance()->bdd;
 
 	/* Session */
 	include 'session.php';

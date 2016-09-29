@@ -30,9 +30,8 @@
 		 * Afficher le menu en administration
 		 * @param int le nombre d'itération
 		 * @param int l'identifiant du parent
-		 * @param object PDO
 		 */
-		public static function getMenuAdmin($recursive, $parentId = null, $bdd){
+		public static function getMenuAdmin($recursive, $parentId = null){
 
 			$recursive --;
 
@@ -43,7 +42,7 @@
 							else  $requete .= " WHERE menuParent = $parentId  ";
 							$requete .= " ORDER BY menuPoid ASC ";
 
-				$sql = $bdd->query($requete);
+				$sql = Database::getInstance()->bdd->query($requete);
 
 				/* Si il y'a bien des éléments de menu */
 				if($sql->rowCount() != 0 ){
@@ -65,7 +64,7 @@
 									echo'</div>';
 								echo'</div>';
 
-								self::getMenuAdmin($recursive, $data->menuId, $bdd);
+								self::getMenuAdmin($recursive, $data->menuId);
 							echo'</li>'; // <-- Fin LI menu Root
 						}
 
