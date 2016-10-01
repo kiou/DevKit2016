@@ -22,8 +22,7 @@
     $data = $sql->fetchObject();
 
     /* Changement de l'etat par rapport à celui en base de donnée */
-	$etat = $data->utilisateurEtat;
-	$etat = !$etat;	
+	$etat = ($data->utilisateurEtat == 0) ? 1 : 0 ;
 
     /* Mise à jour de l'etat */
 	$sql = $bdd->prepare("UPDATE utilisateur SET 

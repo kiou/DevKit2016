@@ -78,8 +78,7 @@ $(function(){
         
         $.ajax(url)
         .done(function(data){
-            console.log(data);
-            if(data){
+            if(data == 1){
                 td.html('<a href="#" title="Publication"><i class="tableAction turquoise fa fa-check"></i></a>');
             }else{
                 td.html('<a href="#" title="Publication"><i class="tableAction rouge fa fa-check"></i></a>'); 
