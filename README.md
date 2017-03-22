@@ -10,14 +10,14 @@ Mise en place des éléments de base pour le développement d'applications web
 - Crop d'image / Js https://fengyuanchen.github.io/cropperjs/
 - Wysiwyg Tinymce 4.2 http://www.tinymce.com/
 
-## Connexion
-![alt tag](http://intranet.colocarts.com/git/connexion.jpg)
+## Gestion de contenu
+![alt tag](https://colocarts.com/gitimg/manager.jpg)
 
-## Gestion des contenus
-![alt tag](http://intranet.colocarts.com/git/manager.jpg)
+## Modifier / ajouter
+![alt tag](https://colocarts.com/gitimg/modifier.jpg)
 
-## Modification / Ajout des contenus
-![alt tag](http://intranet.colocarts.com/git/contenu.jpg)
+## Wysiwyg
+![alt tag](https://colocarts.com/gitimg/wysiwyg.jpg)
 
 ## Installation
 Ouvrir le fichier : `lib/app/config.php`
