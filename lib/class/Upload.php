@@ -95,7 +95,7 @@
 		public static function maxPoid ($nom, $fichier, $poid){
 		
 			global $erreur;
-			if($fichier > $poid){
+			if(filesize($fichier) > $poid){
 				$erreurPoid = ($poid / 1000000);
 				array_push($erreur,$nom.' : Veuillez sélectionner un fichier de '.$erreurPoid.'Mo maximum');
 			}

@@ -28,7 +28,7 @@
 				die();
 			}else{
 				/* si l'utilisateur est connecté, verifier le rôle */
-				if(!empty($roles)){
+				if(!empty($rolesAuth)){
 					if(!in_array($_SESSION['role']['id'], $rolesAuth)){
 						/* Afficher une erreur 403 navigateur */
 						header('HTTP/1.0 403 Forbidden');

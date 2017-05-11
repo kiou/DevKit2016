@@ -34,7 +34,7 @@
 
 #menu{
 	.menuNav{
-		width: calc(100% - 60px);
+		width: 100%;
 		padding: 17px 20px 17px 40px;
 		background-color: $grisFonce;
 		display: block;
@@ -95,7 +95,7 @@
 		li{
 			padding: 3px 0px;
 			a{
-				width: calc(100% - 40px);
+				width: 100%;
 				padding-left: 40px;
 				display: block;
 				color: darken(#fff, 20%);
