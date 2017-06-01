@@ -20,7 +20,7 @@
 	);
 
 	if($sql->rowCount() == 0){
-		Tool::setFlash('Il y\'a aucune demande de réinitialisation de mot de passe pour cet utilistaur','erreur');
+		Tool::setFlash('Il y\'a aucune demande de réinitialisation de mot de passe pour cet utilisateur','erreur');
 		header('location:'.BASEADMIN);
 		die();
 	}

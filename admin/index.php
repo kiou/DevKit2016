@@ -103,7 +103,7 @@
 
 			<div id="connexionMention">
 				<p>© <?= CLIENTNOM ?> - <?= date("Y") ?> | Tous droits réservés.</p>
-				<p><a href="<?= BASEADMIN ?>oublie.php">J'ai oublié mon mote de passe</a></p>
+				<p><a href="<?= BASEADMIN ?>oublie.php">J'ai oublié mon mot de passe</a></p>
 			</div>
 
 		</div>
