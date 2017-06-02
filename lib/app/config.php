@@ -3,8 +3,8 @@
 	/**
 	 * GLobal
 	 */
-	define('BASEADMIN','http://127.0.0.1/DevKit2016/admin/');
-	define('BASEFRONT','http://127.0.0.1/DevKit2016/');
+	define('BASEADMIN','http://127.0.0.1/devkit2016/admin/');
+	define('BASEFRONT','http://127.0.0.1/devkit2016/');
 
 	/* Bdd */
 	define('DBNAME','devkit2016');
