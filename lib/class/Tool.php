@@ -169,6 +169,31 @@
 
 		}
 
+        /**
+         * Initialisation de la paginations
+         * @param $nbPage int nombre de page
+         */
+        public static function initPaginate($nbPage){
+
+            $return = array();
+
+            $page = 1;
+            $debut = 0;
+
+            if (isset($_GET['page'])) {
+                $page = $_GET['page'];
+                $debut = $page-1;
+                $debut *= $nbPage;
+            }
+
+            $return['debut'] = $debut;
+            $return['page'] = $page;
+            $return['nbPage'] = $nbPage;
+
+            return $return;
+
+        }
+
 		/**
 		 * Retourne une date avec l'objet datetime
 		 * @param string le format de la date souhaitée

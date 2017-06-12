@@ -21,13 +21,7 @@
     /**
      * Variables de pagination
      */
-    $page = 1;
-    $debut = 0;
-    if (isset($_GET['page'])) {
-        $page = $_GET['page'];
-        $debut = $page-1;
-        $debut *= 50;
-    }
+    extract(Tool::initPaginate(50));
 ?>
 <!doctype html>
 <html lang="fr">
@@ -89,7 +83,7 @@
                                     if(!empty($recherche))
                                         $requete .= " WHERE CONCAT(utilisateurNom,utilisateurPrenom) LIKE '%$recherche%' ";
                                     $requete .= " ORDER BY utilisateurId DESC
-                                    LIMIT $debut, 50 ";
+                                    LIMIT $debut, $nbPage ";
 
                         $sql = $bdd->query($requete);
 
@@ -156,7 +150,7 @@
                                     if(!empty($recherche))
                                         $requete .= " WHERE CONCAT(utilisateurNom,utilisateurPrenom) LIKE '%$recherche%' ";
                                     
-                        Tool::addPaginate($requete,BASEADMIN.'utilisateur/managerUtilisateur',50,$page);
+                        Tool::addPaginate($requete,BASEADMIN.'utilisateur/managerUtilisateur',$nbPage,$page);
                     ?>
 
                 </div>
