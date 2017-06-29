@@ -3,74 +3,112 @@
     namespace Lib;
 
     /**
-     * Class Mail
-     */
-     class Mail{
+    * Class Mail
+    */
+    class Mail{
 
-         /**
-          * Envoyer un email simple en html
-          * @param string le sujet de l'email
-          * @param array la liste des expéditeurs
-          * @param array la liste des destinataires
-          * @param string le titre du mail
-          * @param string le mail au format HTML
-          */
-          public static function sendSimpletHtml($sujet, array $from, array $to, $titre, $contenu){
+        /**
+        * Envoyer un email simple en html
+        * @param string le sujet de l'email
+        * @param array la liste des expéditeurs
+        * @param array la liste des destinataires
+        * @param string le titre du mail
+        * @param string le mail au format HTML
+        */
+        public static function sendSimpletHtml($sujet, array $from, array $to, $titre, $contenu){
 
             /* Fonction mail */
-          	$transport = \Swift_MailTransport::newInstance();
+            $transport = \Swift_MailTransport::newInstance();
 
             /* Configuration du transport */
-          	$mailer = \Swift_Mailer::newInstance($transport);
+            $mailer = \Swift_Mailer::newInstance($transport);
 
             /* Mail contenu */
             $html = '
-                <html><body style="margin:0px; padding:0px;">
+                <style type="text/css">
+                    body{
+                        width: 100%;
+                        background-color: #f4f4f4;
+                        margin:0px;
+                        padding:0px;
+                        -webkit-font-smoothing: antialiased;
+                        mso-margin-top-alt:0px; mso-margin-bottom-alt:0px; mso-padding-alt: 0px 0px 0px 0px;
+                    }
+            
+                    html{
+                        width: 100%;
+                    }
+            
+                    p,h1,h2,h3,h4,a{
+                        margin-top:0;
+                        margin-bottom:0;
+                        padding-top:0;
+                        padding-bottom:0;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+            
+                    table{
+                        border: 0;
+                    }
+                </style>';
 
-                    <table cellspacing="0" cellpadding="0" width="100%" bgcolor="3a3f52">
+                /* Header */
+                $html .= '<html><body style="margin:0px; padding:0px;">
+            
+                    <table cellspacing="0" cellpadding="0" width="100%" bgcolor="f4f4f4">
+                        <tr><td width="20" height="20" style="font-size:20px; line-height:20px;">&nbsp;</td></tr>
+                        
                         <tr>
                             <td>
-
-                                <table cellspacing="0" cellpadding="0" height="80" width="600" align="center">
+                            
+                                <table cellspacing="0" bgcolor="3a3f52" cellpadding="0" width="560" align="center">
+                                    <tr><td colspan="3" width="20" height="20" style="font-size:20px; line-height:20px;">&nbsp;</td></tr>
+                                
                                     <tr>
-                                        <td width="600" height="80" colspan="2">
-                                            <p style="color:#ffffff">'.$titre.'</p>
+                                        <td width="20" height="20" style="font-size:20px; line-height:20px;">&nbsp;</td>
+                                        <td width="560">
+                                            <p style="font-size:20px; font-weight:bold; color:#ffffff">'.$titre.'</p>
                                         </td>
+                                        <td width="20" height="20" style="font-size:20px; line-height:20px;">&nbsp;</td>
                                     </tr>
+                                    
+                                    <tr><td colspan="3" width="20" height="20" style="font-size:20px; line-height:20px;">&nbsp;</td></tr>
                                 </table>
-
+                                
                             </td>
                         </tr>
-                    </table>
+                        
+                    </table>';
 
-                    <table cellspacing="0" cellpadding="0" width="100%" bgcolor="ffffff">
+                /* Contenu */
+                $html .= '<table cellspacing="0" cellpadding="0" width="100%" bgcolor="f4f4f4">
+                            
+                            <tr>
+                                <td>
+                                
+                                    <table cellspacing="0" bgcolor="ffffff" cellpadding="0" width="560" align="center">
+                                        <tr><td colspan="3" width="20" height="20" style="font-size:20px; line-height:20px;">&nbsp;</td></tr>
+                                    
+                                        <tr>
+                                            <td width="20" height="20" style="font-size:20px; line-height:20px;">&nbsp;</td>
+                                            <td width="560">
+                                                <p style="font-size:13px; color:#3a3f52;">'.$contenu.'</p>
+                                            </td>
+                                            <td width="20" height="20" style="font-size:20px; line-height:20px;">&nbsp;</td>
+                                        </tr>
+                                        
+                                        <tr><td colspan="3" width="20" height="20" style="font-size:20px; line-height:20px;">&nbsp;</td></tr>
+                                    </table>
+                                    
+                                </td>
+                            </tr>
+                                
+                        </table>';
 
-                        <tr>
-                            <td>
 
-                                <table cellspacing="0" cellpadding="0" width="600" align="center">
-                                    <tr>
-                                        <td width="600" height="25">&nbsp;</td>
-                                    </tr>
+            $html.='</body></html>';
 
-                                    <tr>
-                                        <td width="600" colspan="2">
-                                            <p style="color:#3a3f52; font-size:15px;">'.$contenu.'</p>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td width="600" height="25">&nbsp;</td>
-                                    </tr>
-                                </table>
-
-                            </td>
-                        </tr>
-                    </table>
-
-                </body></html>';
-
-            /* Contenu de l'email */
+            /* Envoyer l'email */
             $message = \Swift_Message::newInstance($sujet)
                 ->setFrom($from)
                 ->setTo($to)
@@ -80,9 +118,10 @@
                 )
             ;
 
-          	$mailer->send($message);
-          }
+            $mailer->send($message);
 
-     }
+        }
+
+    }
 
 ?>
