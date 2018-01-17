@@ -7,7 +7,7 @@
 	define('BASEFRONT','http://127.0.0.1/DevKit2016/');
 
 	/* Bdd */
-	define('DBNAME','devkit2016');
+	define('DBNAME','devkit');
 	define('HOST','127.0.0.1');
 	define('USER','root');
 	define('PASS','');

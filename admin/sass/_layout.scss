@@ -60,76 +60,77 @@
 
 /* Header */
 #header{
-	background-color: #fff;
-	width: 100%;
-	border-bottom: 1px solid $grisBordure;
+    @include background-image(linear-gradient(to right, $bleu, $turquoise));
+    width: 100%;
 }
 
 #headerAcces{
-	height: 50px;
-	line-height: 50px;
-	padding-left: 30px;
-	color: $grisTresClair;
-	font-weight: 300;
-	float: left;
-	@include transition-property(opacity,color);
-	@include transition-duration(0.3s);
-	@include transition-timing-function(ease);
-	&:hover{
-		opacity: 0.6;
-	}
-	.fa{
-		padding-right: 5px;
-	}
+    height: 80px;
+    line-height: 80px;
+    padding-left: 30px;
+    color: #fff;
+    font-weight: 300;
+    float: left;
+    @include transition-property(opacity,color);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease);
+    &:hover{
+        opacity: 0.6;
+    }
+    .fa{
+        padding-right: 5px;
+    }
 }
 
 #headerCompte{
-	height: 50px;
-	padding: 0px 20px;
-	float: right;
-	border-left: 1px solid $grisBordure;
-	p{
-		@include transition-property(opacity);
-		@include transition-duration(0.3s);
-		@include transition-timing-function(ease);
-		line-height: 50px;
-		cursor: pointer;
-		&:hover{
-			opacity: 0.6;
-		}
+    height: 80px;
+    padding: 0px 20px;
+    float: right;
+    p{
+        @include transition-property(opacity);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(ease);
+        line-height: 80px;
+        cursor: pointer;
+        color: #fff;
+        &:hover{
+            opacity: 0.6;
+        }
 
-	}
-	.fa-angle-right{
-		@include transition-property(transform);
-		@include transition-duration(0.3s);
-		@include transition-timing-function(ease);
-		padding-left: 5px;
-	}
-	&.active{
-		.fa-angle-right{
-			@include transform(rotateZ(90deg));
-		}
-	}
+    }
+    .fa-angle-right{
+        @include transition-property(transform);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(ease);
+        padding-left: 5px;
+    }
+    &.active{
+        .fa-angle-right{
+            @include transform(rotateZ(90deg));
+        }
+    }
 }
 
 #headerCompteMenu{
-	text-align: right;
-	width: 200px;
+    width: 200px;
+    .fa{
+        padding-right: 5px;
+    }
 }
 
 #headerDeco{
-	height: 50px;
-	line-height: 50px;
-	float: right;
-	margin-right:30px;
-	font-size: 17px;
-	color: $grisTresClair;
-	@include transition-property(opacity,color);
-	@include transition-duration(0.3s);
-	@include transition-timing-function(ease);
-	&:hover{
-		opacity: 0.6;
-	}
+    height: 80px;
+    line-height: 80px;
+    float: right;
+    margin-right:30px;
+    font-size: 17px;
+    color: #fff;
+    @include transition-property(opacity,color);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease);
+    &:hover{
+        opacity: 0.6;
+    }
 }
 
 #headerMobile{
@@ -188,7 +189,7 @@
 	position: fixed;
 	z-index: 1;
 	height: 100%;
-	background-color: $grisClair;
+    background-color: $grisFonce;
 	overflow-y: hidden;
 	@include transition-property(transform);
 	@include transition-duration(0.4s);
@@ -199,17 +200,17 @@
 }
 
 #menuEntreprise{
-	width: 100%;
-	background-color: $rouge;
-	text-align: center;
-	height: 50px;
-	p{
-		text-transform: uppercase;
-		font-weight: bold;
-		font-size: 15px;
-		line-height: 50px;
-		color: #fff;
-	}
+    width: 100%;
+    @include background-image(linear-gradient(to right, $bleu,$bleurClair));
+    text-align: center;
+    height: 80px;
+    p{
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 80px;
+        color: #fff;
+    }
 }
 
 #menuLogo{

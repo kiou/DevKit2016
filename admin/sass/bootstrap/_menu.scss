@@ -7,16 +7,16 @@
 	display: none;
 	position: absolute;
 	background-color: #fff;
-	padding: 20px;
+	padding: 15px 20px;
 	z-index: 999;
 	&.shadow{
-		@include box-shadow(lighten($grisTresClair,20%) 2px 2px 12px);
+		@include box-shadow($grisTresClair 2px 2px 12px);
 	}
 	ul{
 		list-style: none;
 		a{
-			padding: 2px 0px;
-			color: $grisTresClair;
+			padding: 3px 0px;
+			color: $grisClair;
 			font-weight: 300;
 			display: block;
 			@include transition-property(opacity,color);
@@ -35,14 +35,12 @@
 #menu{
 	.menuNav{
 		width: 100%;
-		padding: 17px 20px 17px 40px;
-		background-color: $grisFonce;
+		padding: 17px 20px 17px 25px;
 		display: block;
 		color: #fff;
-		border-bottom: 1px solid $grisNoir;
 		position: relative;
 		font-weight: 300;
-		@include transition-property(color);
+		@include transition-property(color, background-color);
 		@include transition-duration(0.3s);
 		@include transition-timing-function(ease);
 		.fa:first-child{
@@ -58,6 +56,7 @@
 		}
 		&:hover{
 			color: $turquoise;
+            background-color: lighten($grisFonce,3%);
 			.fa-angle-right{
 				color: $turquoise;
 			}
@@ -79,7 +78,7 @@
 				top: 0px;
 				left: 0px;
 				bottom: 0px;
-				width: 10px;
+				width: 5px;
 				background-color: $turquoise;
 			}
 		}
@@ -87,22 +86,20 @@
 	ul{
 		display: none;
 		width: 100%;
-		background-color: $grisFonce;
-		border-bottom: 1px solid $grisNoir;
+        background-color: darken($grisFonce, 2%);
 		&.current{
 			display: block
 		}
 		li{
-			padding: 3px 0px;
 			a{
-				width: 100%;
-				padding-left: 40px;
+                padding:5px 10px 5px 59px;
 				display: block;
-				color: darken(#fff, 20%);
+				color: darken(#fff, 30%);
 				font-weight: 300;
 				@include transition-property(color);
 				@include transition-duration(0.3s);
 				@include transition-timing-function(ease);
+                font-size: 14px;
 				.fa{
 					padding-right: 5px;
 					font-size: 13px;
@@ -117,10 +114,10 @@
 				}
 			}
 			&:first-child{
-				padding-top: 20px;
+				padding-top: 10px;
 			}
 			&:last-child{
-				padding-bottom: 20px;
+				padding-bottom: 10px;
 			}
 		}
 	}
